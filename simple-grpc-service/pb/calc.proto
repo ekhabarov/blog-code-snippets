@@ -1,0 +1,18 @@
+// Generate Golang code with
+// protoc --go_out=plugins=grpc:. ./calc.proto
+
+syntax = "proto3";
+option go_package = "pb";
+
+message Request {
+  int32 a = 1;
+  int32 b = 2;
+}
+
+message Response {
+  int32 c = 3;
+}
+
+service Calc {
+  rpc Add (Request) returns (Response);
+}
