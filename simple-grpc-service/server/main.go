@@ -6,7 +6,7 @@ import (
 	"net"
 
 	"github.com/ekhabarov/blog-code-snippets/simple-grpc-service/pb"
-	grpc "google.golang.org/grpc"
+	"google.golang.org/grpc"
 )
 
 // server implements gRPC Server CalcServer interface from pb/calc.pb.go

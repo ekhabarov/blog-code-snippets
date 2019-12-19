@@ -1,8 +1,8 @@
 package main
 
 import (
-	context "context"
-	fmt "fmt"
+	"context"
+	"fmt"
 	"log"
 
 	"github.com/ekhabarov/blog-code-snippets/simple-grpc-service/pb"

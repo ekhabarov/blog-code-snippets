@@ -1,0 +1,46 @@
+// Generate Golang code with
+// protoc --go_out=plugins=grpc:. ./order.proto
+
+syntax = "proto3";
+option go_package = "pb";
+
+service OrderService {
+  rpc Get(GetRequest) returns (GetResponse);
+  rpc Add(AddRequest) returns (AddResponse);
+}
+
+message Item {
+  int64 id = 1;
+  string name = 2;
+  int32 qty = 3;
+}
+
+message Order {
+  int64 id = 1;
+  string number = 2;
+  string status = 3;
+  int64 created_at = 4;
+  repeated Item items = 5;
+}
+
+message GetRequest {
+  int64 id = 1;
+}
+
+message GetResponse {
+  Order order = 1;
+}
+
+message AddRequest {
+  message Body {
+    Order order = 1;
+  }
+
+  Body body = 1;
+}
+
+message AddResponse {
+  int64 id = 1;
+  string status = 2;
+}
+
