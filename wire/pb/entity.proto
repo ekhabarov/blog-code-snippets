@@ -1,0 +1,22 @@
+syntax = "proto3";
+package entity;
+
+option go_package = "pb";
+
+service EntityRPC {
+  rpc EntityByID(EntityByIDRequest) returns (EntityByIDResponse);
+}
+
+message EntityByIDRequest {
+  int64 id = 1;
+}
+
+message EntityByIDResponse {
+  Entity entity = 1;
+}
+
+message Entity {
+  int64 id = 1;
+  string name = 2;
+}
+
