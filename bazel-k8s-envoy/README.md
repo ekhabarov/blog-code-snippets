@@ -3,6 +3,8 @@
 ## Usage
 
 ```shell
+% bazel run //tools:tilt-up
+
 % grpcurl -plaintext \
   -d '{"name": "Bazel"}' \
   127.0.0.1:55000 svc.ServiceOne.Hello
@@ -10,9 +12,7 @@
 {
   "body": "Hello, Bazel"
 }
-```
 
-```shell
 % curl -i http://localhost:8080/v1/hello\?name\=Bazel
 
 HTTP/1.1 200 OK
@@ -27,6 +27,8 @@ server: envoy
 {
  "body": "Hello, Bazel"
 }
+
+% bazel run //tools:tilt-down
 ```
 
 NOTE: Until `service-one` bacome available, Envoy will return HTTP 503: `upstream connect error` or `no healthy upstream`
