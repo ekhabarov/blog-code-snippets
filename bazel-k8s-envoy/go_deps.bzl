@@ -58,14 +58,8 @@ def go_deps():
     go_repository(
         name = "com_github_envoyproxy_go_control_plane",
         importpath = "github.com/envoyproxy/go-control-plane",
-        sum = "h1:dulLQAYQFYtG5MTplgNGHWuV2D+OBD+Z8lmDBmbLg+s=",
-        version = "v0.9.9-0.20210512163311-63b5d3c536b0",
-    )
-    go_repository(
-        name = "com_github_envoyproxy_protoc_gen_validate",
-        importpath = "github.com/envoyproxy/protoc-gen-validate",
-        sum = "h1:EQciDnbrYxy13PgWoY8AqoxGiPrpgBZ1R8UNe3ddc+A=",
-        version = "v0.1.0",
+        sum = "h1:vQLjymTobffN2R0F8eTqw6q7iozfRO5Z0m+/4Vw+/uA=",
+        version = "v0.9.9",
     )
     go_repository(
         name = "com_github_ghodss_yaml",
@@ -189,7 +183,7 @@ def go_deps():
     )
     go_repository(
         name = "org_golang_google_grpc",
-        build_file_proto_mode = "disable", # necessary for using grpc reflection package.
+        build_file_proto_mode = "disable",  # necessary for using grpc reflection package.
         importpath = "google.golang.org/grpc",
         sum = "h1:AGJ0Ih4mHjSeibYkFGh1dD9KJ/eOtZ93I6hoHhukQ5Q=",
         version = "v1.40.0",

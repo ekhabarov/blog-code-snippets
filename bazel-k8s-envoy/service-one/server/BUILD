@@ -6,5 +6,9 @@ go_library(
     name = "server",
     srcs = ["server.go"],
     importpath = "github.com/ekhabarov/blog-code-snippets/bazel-k8s-envoy/service-one/server",
-    deps = ["//service-one/pb"],
+    deps = [
+        "//service-one/pb",
+        "@org_golang_google_grpc//:go_default_library",
+        "@org_golang_google_grpc//metadata",
+    ],
 )

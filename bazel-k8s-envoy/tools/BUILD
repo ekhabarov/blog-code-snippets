@@ -25,4 +25,3 @@ sh_binary(
         "//conditions:default": ["@tilt_linux_x86_64//:tilt"],
     }),
 )
-

@@ -2,6 +2,9 @@
 
 ## Usage
 
+1. Install [Bazelisk](https://github.com/bazelbuild/bazelisk#installation).
+1. Run Tilt.
+
 ```shell
 % bazel run //tools:tilt-up
 
@@ -13,7 +16,10 @@
   "body": "Hello, Bazel"
 }
 
-% curl -i http://localhost:8080/v1/hello\?name\=Bazel
+% curl -i \
+  -H 'token: abc' \
+  http://localhost:8080/v1/hello\?name\=Bazel
+
 
 HTTP/1.1 200 OK
 content-type: application/json
@@ -31,4 +37,4 @@ server: envoy
 % bazel run //tools:tilt-down
 ```
 
-NOTE: Until `service-one` bacome available, Envoy will return HTTP 503: `upstream connect error` or `no healthy upstream`
+NOTE: Until `service-one` become available, Envoy will return HTTP 503: `upstream connect error` or `no healthy upstream`

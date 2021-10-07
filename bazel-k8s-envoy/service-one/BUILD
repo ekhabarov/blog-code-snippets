@@ -54,6 +54,6 @@ k8s_object(
     substitutions = {
         "%{apiname}": "service-one",
         "%{namespace}": namespace(),
-        },
+    },
     template = "//k8s:api-deployment-yaml",
 )

@@ -125,6 +125,10 @@ load("//:go_deps.bzl", "go_deps")
 # gazelle:repository_macro go_deps.bzl%go_deps
 go_deps()
 
+load("//:go_deps_patched.bzl", "go_deps_patched")
+
+go_deps_patched()
+
 # Kubernetes
 http_archive(
     name = "io_bazel_rules_k8s",
@@ -139,4 +143,4 @@ k8s_repositories()
 
 load("@io_bazel_rules_k8s//k8s:k8s_go_deps.bzl", k8s_go_deps = "deps")
 
-k8s_go_deps() # toolchain
+k8s_go_deps()  # toolchain

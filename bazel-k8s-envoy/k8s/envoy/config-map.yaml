@@ -54,42 +54,42 @@ data:
                             always_print_enums_as_ints: false
                             preserve_proto_field_names: true
 
-                      # - name: envoy.filters.http.ext_authz
-                      #   typed_config:
-                      #     "@type": type.googleapis.com/envoy.extensions.filters.http.ext_authz.v3.ExtAuthz
-                      #     grpc_service:
-                      #       envoy_grpc:
-                      #         cluster_name: authz
-                      #       timeout: 0.5s
-                      #     transport_api_version: V3
-                      #     failure_mode_allow: false
-                      #     with_request_body:
-                      #       max_request_bytes: 8192
-                      #       allow_partial_message: true
-                      #       pack_as_bytes: true
-                      #     status_on_error:
-                      #       code: 503
+                      - name: envoy.filters.http.ext_authz
+                        typed_config:
+                          "@type": type.googleapis.com/envoy.extensions.filters.http.ext_authz.v3.ExtAuthz
+                          grpc_service:
+                            envoy_grpc:
+                              cluster_name: authz
+                            timeout: 0.5s
+                          transport_api_version: V3
+                          failure_mode_allow: false
+                          with_request_body:
+                            max_request_bytes: 8192
+                            allow_partial_message: true
+                            pack_as_bytes: true
+                          status_on_error:
+                            code: 503
 
                       - name: envoy.filters.http.router
                         typed_config: {}
 
       clusters:
 
-        # - name: authz
-        #   connect_timeout: 1.25s
-        #   type: logical_dns
-        #   lb_policy: round_robin
-        #   dns_lookup_family: V4_ONLY
-        #   http2_protocol_options: {}
-        #   load_assignment:
-        #     cluster_name: authz
-        #     endpoints:
-        #       - lb_endpoints:
-        #           - endpoint:
-        #               address:
-        #                 socket_address:
-        #                   address: authz.%{namespace}.svc.cluster.local
-        #                   port_value: 5000
+        - name: authz
+          connect_timeout: 1.25s
+          type: logical_dns
+          lb_policy: round_robin
+          dns_lookup_family: V4_ONLY
+          http2_protocol_options: {}
+          load_assignment:
+            cluster_name: authz
+            endpoints:
+              - lb_endpoints:
+                  - endpoint:
+                      address:
+                        socket_address:
+                          address: authz.%{namespace}.svc.cluster.local
+                          port_value: 5000
 
         - name: service-one
           connect_timeout: 1.25s
