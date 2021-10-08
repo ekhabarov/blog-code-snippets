@@ -2,6 +2,7 @@
 
 ## Usage
 
+1. Install and start [minikube](https://minikube.sigs.k8s.io/docs/start/).
 1. Install [Bazelisk](https://github.com/bazelbuild/bazelisk#installation).
 1. Run Tilt.
 
