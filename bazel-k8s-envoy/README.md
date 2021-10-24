@@ -1,4 +1,6 @@
-# Envoy proxy as an API gateway. Built with Bazel. Run in Kubernetes.
+# Envoy proxy as an API gateway. Built with Bazel. Deployed into Kubernetes.
+
+[Blog post](https://dev.ms/post/envoy-as-an-api-gateway/) with detailed explanation.
 
 ## Usage
 
@@ -38,4 +40,5 @@ server: envoy
 % bazel run //tools:tilt-down
 ```
 
-NOTE: Until `service-one` become available, Envoy will return HTTP 503: `upstream connect error` or `no healthy upstream`
+NOTE: Until `service-one` become available, Envoy will return HTTP 503:
+`upstream connect error` or `no healthy upstream`
