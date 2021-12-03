@@ -1,0 +1,2 @@
+build --loading_phase_threads="HOST_CPUS*.4"
+build --local_cpu_resources="HOST_CPUS*.4"
