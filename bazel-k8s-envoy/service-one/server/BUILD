@@ -4,7 +4,10 @@ package(default_visibility = ["//visibility:public"])
 
 go_library(
     name = "server",
-    srcs = ["server.go"],
+    srcs = [
+        "bye.go",
+        "hello.go",
+    ],
     importpath = "github.com/ekhabarov/blog-code-snippets/bazel-k8s-envoy/service-one/server",
     deps = [
         "//service-one/pb",
