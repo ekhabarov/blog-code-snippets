@@ -1,0 +1,34 @@
+syntax = "proto3";
+
+package svc;
+
+option go_package = "github.com/ekhabarov/blog-code-snippets/grpc-predictable-go-interfces/transport";
+
+import "google/api/annotations.proto";
+
+service MyService {
+  rpc List(Request) returns (Response) {
+    option (google.api.http) = { get: "/v1/list" };
+  }
+
+  rpc ListWithApplier(Request) returns (Response) {
+    option (google.api.http) = { get: "/v1/list-wa" };
+  }
+}
+
+message Request {
+  int32 page = 1;
+  int32 limit = 2;
+  string filter = 3;
+}
+
+message Response {
+  repeated Entity entities = 1;
+}
+
+message Entity {
+  int32 id = 1;
+  string name = 2;
+}
+
+
