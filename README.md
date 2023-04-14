@@ -5,4 +5,4 @@
 * [Ragel: state machine compiler](https://ekhabarov.com/2021/01/ragel-state-machine-compiler/)
 * [Envoy as an API Gateway](https://ekhabarov.com/post/envoy-as-an-api-gateway/)
 * [gRPC: predictable Go interfaces](https://ekhabarov.com/post/grpc-predictable-go-interfaces/)
-
+* [How to generate code with Bazel](https://ekhabarov.com/post/how-to-generate-code-with-bazel/)
