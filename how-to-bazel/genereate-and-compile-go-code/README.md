@@ -5,4 +5,4 @@ compile it with Bazel. The whole process looks like:
 
 ![Schema](schema.png)
 
-
+[Blog](https://ekhabarov.com/post/how-to-generate-code-with-bazel/)
